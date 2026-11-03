@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projekt GPT Test</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">01_Projekt_GPT_Test</p>
+          <h1>Meine Aufgaben</h1>
+        </div>
+        <button id="themeToggle" class="theme-toggle" aria-label="Farbschema wechseln">
+          🌙
+        </button>
+      </header>
+
+      <main class="card">
+        <form id="taskForm" class="task-form">
+          <input
+            id="taskInput"
+            type="text"
+            maxlength="80"
+            placeholder="Neue Aufgabe eingeben..."
+            aria-label="Neue Aufgabe"
+            autocomplete="off"
+          />
+          <button type="submit">Hinzufügen</button>
+        </form>
+
+        <div class="toolbar">
+          <div class="stats">
+            <span id="taskCount">0 Aufgaben</span>
+          </div>
+          <div class="filters" aria-label="Filter">
+            <button class="filter active" data-filter="all" type="button">Alle</button>
+            <button class="filter" data-filter="active" type="button">Offen</button>
+            <button class="filter" data-filter="completed" type="button">Erledigt</button>
+          </div>
+        </div>
+
+        <ul id="taskList" class="task-list" aria-live="polite"></ul>
+      </main>
+    </div>
+
+    <template id="taskTemplate">
+      <li class="task-item">
+        <label class="task-check">
+          <input type="checkbox" />
+          <span class="task-text"></span>
+        </label>
+        <button class="delete-btn" type="button" aria-label="Aufgabe löschen">✕</button>
+      </li>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
